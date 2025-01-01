@@ -19,8 +19,9 @@ public class Avion extends Vehicule {
 	@Override
 	public void calculePrix(int anneActuelle) {
 		double valeur=0;
-		if(this.moteur=="hélices") {
+		if(this.moteur=="HELICES") {
 			int tranches=this.heuresVol/150;
+			System.out.println("-------"+this.prixAchat+"-------"+tranches+"---------");
 			valeur=(this.prixAchat*0.05)*tranches;
 		}
 		else {
@@ -29,6 +30,7 @@ public class Avion extends Vehicule {
 		}
 		if(this.prixAchat-valeur>0) {
 			this.prixCourant=this.prixAchat-valeur;
+			System.out.println("-------"+this.prixCourant);
 		}
 		else {
 			this.prixCourant=0;

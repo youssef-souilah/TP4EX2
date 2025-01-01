@@ -25,8 +25,9 @@ public class Voiture extends Vehicule {
 			int dif= anneActuelle-this.dateAchat;
 			double prix=this.prixAchat;
 			for(int i=0;i<dif;i++) {
-				valeur=valeur+(this.prixAchat*0.02);
+				valeur=valeur+((this.prixAchat-valeur)*0.02);
 			}
+			System.out.println("-------"+valeur);
 		}
 		else{
 			this.prixCourant=this.prixAchat;
@@ -34,15 +35,15 @@ public class Voiture extends Vehicule {
 		
 		if(this.marque=="Renault"||this.marque=="Fiat") {
 			int tranches=(int) (this.kilometrage/10000);
-			valeur=valeur+(this.prixAchat*0.05)*tranches;
+			valeur=valeur+((this.prixAchat-valeur)*0.05)*tranches;
 		}
 		else if (this.marque=="Ferrari"||this.marque=="Porsche") {
 			int tranches=(int) (this.kilometrage/10000);
-			valeur=valeur+(this.prixAchat*0.1)*tranches;
+			valeur=valeur+((this.prixAchat-valeur)*0.1)*tranches;
 		}
 		else {
 			int tranches=(int) (this.kilometrage/10000);
-			valeur=valeur+(this.prixAchat*0.06)*tranches;
+			valeur=valeur+((this.prixAchat-valeur)*0.06)*tranches;
 		}
 		if(this.prixAchat-valeur>0) {
 			this.prixCourant=this.prixAchat-valeur;
