@@ -17,6 +17,5 @@ class GestionVehicules {
 			vehicules[i].calculePrix(ANNEE_ACTUELLE);
 			vehicules[i].affiche(); 
 		}
-		
 	}
 }
