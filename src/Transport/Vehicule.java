@@ -13,7 +13,7 @@ public class Vehicule {
 	}
 	
 	public void affiche() {
-		System.out.println("Marque : "+this.marque+" Date Achat : "+this.dateAchat+" 	Prix Achat : "+this.prixAchat);
+		System.out.println("|| Marque : "+this.marque+" Date Achat : "+this.dateAchat+" Prix Achat : "+this.prixAchat+" Prix Courant : "+this.prixCourant+"||");
 	}
 	public void calculePrix(int anneActuelle) {
 		if(anneActuelle>this.dateAchat) {

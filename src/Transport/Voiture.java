@@ -5,7 +5,7 @@ public class Voiture extends Vehicule {
 	protected double cylindree,puissance,kilometrage;
 	protected int nbPortes;
 	
-	public Voiture(String marque, int dateAchat, double prixAchat,double cylindree,double puissance,double kilometrage,int nbPortes) {
+	public Voiture(String marque, int dateAchat, double prixAchat,double cylindree,int nbPortes,double puissance,double kilometrage) {
 		super(marque, dateAchat, prixAchat);
 		this.cylindree=cylindree;
 		this.puissance=puissance;
