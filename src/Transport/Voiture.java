@@ -21,34 +21,34 @@ public class Voiture extends Vehicule {
 	@Override
 	public void calculePrix(int anneActuelle) {
 		double valeur=0;
-		if(anneActuelle>this.dateAchat) {
-			int dif= anneActuelle-this.dateAchat;
-			double prix=this.prixAchat;
+		if(anneActuelle>this.getDateAchat()) {
+			int dif= anneActuelle-this.getDateAchat();
+			double prix=this.getPrixAchat();
 			for(int i=0;i<dif;i++) {
-				valeur=valeur+((this.prixAchat-valeur)*0.02);
+				valeur=valeur+((this.getPrixAchat()-valeur)*0.02);
 			}
 		}
 		else{
-			this.prixCourant=this.prixAchat;
+			this.setPrixCourant(this.getPrixAchat());
 		}
 		
-		if(this.marque=="Renault"||this.marque=="Fiat") {
+		if(this.getMarque()=="Renault"||this.getMarque()=="Fiat") {
 			int tranches=(int) (this.kilometrage/10000);
-			valeur=valeur+((this.prixAchat-valeur)*0.05)*tranches;
+			valeur=valeur+((this.getPrixAchat()-valeur)*0.05)*tranches;
 		}
-		else if (this.marque=="Ferrari"||this.marque=="Porsche") {
+		else if (this.getMarque()=="Ferrari"||this.getMarque()=="Porsche") {
 			int tranches=(int) (this.kilometrage/10000);
-			valeur=valeur+((this.prixAchat-valeur)*0.1)*tranches;
+			valeur=valeur+((this.getPrixAchat()-valeur)*0.1)*tranches;
 		}
 		else {
 			int tranches=(int) (this.kilometrage/10000);
-			valeur=valeur+((this.prixAchat-valeur)*0.06)*tranches;
+			valeur=valeur+((this.getPrixAchat()-valeur)*0.06)*tranches;
 		}
-		if(this.prixAchat-valeur>0) {
-			this.prixCourant=this.prixAchat-valeur;
+		if(this.getPrixAchat()-valeur>0) {
+			this.setPrixCourant(this.getPrixAchat()-valeur);
 		}
 		else {
-			this.prixCourant=0;
+			this.setPrixCourant(0);
 		}
 	}
 

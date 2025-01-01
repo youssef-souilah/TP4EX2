@@ -21,17 +21,17 @@ public class Avion extends Vehicule {
 		double valeur=0;
 		if(this.moteur=="HELICES") {
 			int tranches=this.heuresVol/150;
-			valeur=(this.prixAchat*0.05)*tranches;
+			valeur=(this.getPrixAchat()*0.05)*tranches;
 		}
 		else {
 			int tranches=this.heuresVol/1100;
-			valeur=(this.prixAchat*0.05)*tranches;
+			valeur=(this.getPrixAchat()*0.05)*tranches;
 		}
-		if(this.prixAchat-valeur>0) {
-			this.prixCourant=this.prixAchat-valeur;
+		if(this.getPrixAchat()-valeur>0) {
+			this.setPrixCourant(this.getPrixAchat()-valeur);
 		}
 		else {
-			this.prixCourant=0;
+			this.setPrixCourant(0);
 		}
 	}
 }
