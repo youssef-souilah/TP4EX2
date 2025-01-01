@@ -27,7 +27,6 @@ public class Voiture extends Vehicule {
 			for(int i=0;i<dif;i++) {
 				valeur=valeur+((this.prixAchat-valeur)*0.02);
 			}
-			System.out.println("-------"+valeur);
 		}
 		else{
 			this.prixCourant=this.prixAchat;
